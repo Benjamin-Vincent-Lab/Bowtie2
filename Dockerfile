@@ -5,7 +5,7 @@ FROM debian:stretch
 USER root
 
 # install tools
-# python is for bowtie2-build
+# python was needed for bowtie2-build
 
 RUN \
   apt-get update && \
@@ -27,26 +27,3 @@ RUN \
   
 CMD \
   bash -c "bowtie2 --help"
-
-# 
-# CMD \
-#   bash -c "stig --help"
-# /import/git_files/lib/stig \
-#   --chr7-filename=$CH7_FILENAME \
-#   --chr14-filename=$CH14_FILENAME \
-#   --tcell-data=$TCELL_DATA \
-#   --repertoire-size=$REPERTOIRE_SIZE \
-#   --population-size=$POPULATION_SIZE \
-#   --read-type=$READ_TYPE \
-#   --sequence-type=$SEQUENCE_TYPE \
-#   --sequence-count=$SEQUENCE_COUNT \
-#   --read-length-mean=$READ_LENGTH_MEAN \
-#   --read-length-sd=$READ_LENGTH_SD \
-#   --insert-length-mean=$INSERT_LENGTH_MEAN \
-#   --insert-length-sd=$INSERT_LENGTH_SD \
-
-#   --population-distribution=$POPULATION_DISTRIBUTION \
-#   --population-chisquare-parameters=$POPULATION_CHISQUARE_PARAMETERS \
-#   --receptor-ratio=$RECEPTOR_RATIO \
-#   --output=$OUTPUT \
-#   $ALLELE_FILES

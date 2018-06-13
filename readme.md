@@ -2,7 +2,7 @@ This docker image sets up the environment to run Bowtie2 version 2.3.3.1
 
 You will need an index reference to run this.
 
-I built my refernce using this image by submitting as a slurm job via `sbatch jobs/build_bowtie_index.job`. At 16 threads and 2g per thread it took about X hours.
+I built my refernce using this image by submitting as a slurm job via `sbatch jobs/build_bowtie_index.job`. At 16 threads and 4g per thread it took 24 minutes.
 
 
 ---- Helpful commands ----
