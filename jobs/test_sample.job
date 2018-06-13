@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --job-name testBow2
+#SBATCH --partition docker
+#SBATCH --time UNLIMITED
+#SBATCH --mincpus 8
+#SBATCH --mem-per-cpu 2g
+#SBATCH --output /home/dbortone/scratch/test_bowtie/test_file_output.txt
+#SBATCH --error /home/dbortone/scratch/test_bowtie/test_file_error.txt
+
+docker run --rm=true \
+  -v /datastore:/datastore:shared \
+  -v /home/dbortone/scratch:/home/dbortone/scratch \
+  dockerreg.bioinf.unc.edu:5000/bowtie2_2.3.3.1:1 bash -c \
+  'bowtie2 \
+    --threads 8 \
+    -x /bowtie2-build/bowtie2-hg38 \
+    -1 /home/dbortone/scratch/Optimize_Diversity_Metrics_CRSV1371/stig_rnaseq/output/a_0001/a_0001_R1.degraded.fastq.gz \
+    -2 /home/dbortone/scratch/Optimize_Diversity_Metrics_CRSV1371/stig_rnaseq/output/a_0001/a_0001_R2.degraded.fastq.gz \
+    -S /home/dbortone/scratch/test_bowtie/test_file.sam'
