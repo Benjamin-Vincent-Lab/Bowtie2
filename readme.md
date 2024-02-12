@@ -1,3 +1,5 @@
+* this repository was originally hosted at github.com/Benjamin-Vincent-Lab/Bowtie2 , moved here on 2/12/2024
+
 This docker image sets up the environment to run Bowtie2 version 2.3.3.1  
 
 You will need an index reference to run this.  
